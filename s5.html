@@ -1,0 +1,30 @@
+<script>
+function lw()
+{
+var c= document.getElementById("cmd").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET","http://192.168.80.128/cgi-bin/s5.py?x="+c,true);
+xhr.send();
+xhr.onload = function (){
+var output = xhr.responseText;
+document.getElementById("out").innerHTML = output;
+}
+}
+</script>
+
+<body>
+
+<center>
+<br><br><br><br><br>
+<h1>Enter ur command : 
+<input type="text" id="cmd" name="cmd"/>
+<br><br>
+<button onclick ="lw()" > submit </button>
+</h1>
+<h3>
+<pre>
+<div id = "out"> Here u will get output ...</div>
+</pre>
+</h3>
+</center>
+</body>
